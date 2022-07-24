@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import main from "../asset/main.jpg";
 import { MdArrowForwardIos } from "react-icons/md";
 
 export default function Home() {
   return (
     <Container>
-      <img src={main} alt="" />
+      <img
+        src={
+          "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FI8WC6%2FbtrH0SAb5mU%2FQGUhlFTsStvcaksNG5J8jk%2Fimg.jpg"
+        }
+        alt=""
+      />
       <MdArrowForwardIos />
       <TextBox>
         <Date>22.10.02</Date>
@@ -16,10 +20,10 @@ export default function Home() {
           <div style={{ fontSize: "1.5rem" }}>Jang Sera</div>
         </Who>
       </TextBox>
-      <Comments>
+      {/* <Comments>
         <Wedding style={{ marginLeft: `-30px` }}>wedding</Wedding>
         <div>invitation</div>
-      </Comments>
+      </Comments> */}
     </Container>
   );
 }
@@ -50,23 +54,36 @@ const Container = styled.div`
 
 const TextBox = styled.div`
   position: absolute;
-  top: 3%;
+  top: 4%;
   width: 100%;
-  font-family: "Satisfy", cursive;
 `;
 
 const Date = styled.div`
   text-align: center;
   font-size: 6rem;
   font-weight: 600;
-  color: #222;
+  color: #fff;
+  opacity: 0.8;
+  font-family: "Cormorant SC", serif;
+  position: relative;
+
+  ::before {
+    position: absolute;
+    top: 10%;
+    font-size: 1rem;
+    content: "Wedding";
+  }
 `;
 
 const Who = styled.div`
-  margin-left: 20px;
+  text-align: end;
+  margin-top: 200px;
+  margin-right: 20px;
   font-size: 1.2rem;
-  color: #222;
-  margin-bottom: 10px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-family: "Bebas Neue", cursive;
+  opacity: 0.9;
 `;
 
 const Comments = styled.div`
@@ -77,7 +94,7 @@ const Comments = styled.div`
   text-align: start;
   font-size: 3rem;
   color: #fff;
-  font-family: "Satisfy", cursive;
+  font-family: "Fira Sans", sans-serif;
 `;
 
 const Wedding = styled.div`
