@@ -5,6 +5,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 export default function Home() {
   return (
     <Container>
+      <Wedding>Wedding</Wedding>
       <img
         src={
           "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FI8WC6%2FbtrH0SAb5mU%2FQGUhlFTsStvcaksNG5J8jk%2Fimg.jpg"
@@ -63,12 +64,13 @@ const Date = styled.div`
   font-family: "Cormorant SC", serif;
   position: relative;
 
-  ::before {
+  /* ::before {
+    opacity: 1;
     position: absolute;
     top: 10%;
     font-size: 1rem;
     content: "Wedding";
-  }
+  } */
 `;
 
 const Who = styled.div`
@@ -80,4 +82,14 @@ const Who = styled.div`
   margin-bottom: 20px;
   font-family: "Bebas Neue", cursive;
   opacity: 0.6;
+`;
+
+const Wedding = styled.div`
+  opacity: 0.8;
+  position: absolute;
+  top: 6%;
+  left: 10%;
+  font-size: 1rem;
+  font-family: "Cormorant SC", serif;
+  color: #fff;
 `;
