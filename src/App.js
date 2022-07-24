@@ -72,10 +72,11 @@ const Container = styled.div`
 
 const Next = styled.div`
   cursor: pointer;
+  text-align: end;
   width: 50px;
   position: absolute;
   top: 30%;
-  right: 5%;
+  right: 3%;
   font-size: 3rem;
   opacity: 0.5;
   z-index: 10;
