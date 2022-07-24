@@ -71,7 +71,7 @@ const LeftImgBox = styled.div`
 
   div {
     width: 100%;
-    height: calc(100vh / 8);
+    height: calc(var(--vh, 1vh) * 100 / 8);
   }
   img {
     width: 100%;
