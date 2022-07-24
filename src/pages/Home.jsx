@@ -12,7 +12,7 @@ export default function Home() {
         }
         alt=""
       />
-      <MdArrowForwardIos />
+      {/* <MdArrowForwardIos /> */}
       <TextBox>
         <Date>22.10.02</Date>
         <Who>
