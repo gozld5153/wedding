@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import main from "../asset/main.JPG";
+import main from "../asset/main.jpg";
 import { MdArrowForwardIos } from "react-icons/md";
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
 
 const Container = styled.div`
   width: 100vw;
-  height: calc(100%);
+  height: calc(var(--vh, 1vh) * 100)
   position: relative;
   overflow: hidden;
   /* background-repeat: none;
@@ -35,7 +35,7 @@ const Container = styled.div`
 
   img {
     width: 100%;
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 100)
     object-fit: cover;
   }
   > svg {

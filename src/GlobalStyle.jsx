@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0
   }
 
+  :root {
+       --vh: 100%;
+   }
+
 `;
 
 export default GlobalStyle;
