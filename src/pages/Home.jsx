@@ -26,7 +26,7 @@ export default function Home() {
 
 const Container = styled.div`
   width: 100vw;
-  height: calc(var(--vh, 1vh) * 100)
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
   overflow: hidden;
   /* background-repeat: none;
