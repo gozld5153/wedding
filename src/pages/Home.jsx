@@ -26,16 +26,18 @@ export default function Home() {
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  height: calc(100%);
   position: relative;
+  overflow: hidden;
+  /* background-repeat: none;
+  background-size: cover;
+  background-position: center; */
 
   img {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
-
   > svg {
     cursor: pointer;
     position: absolute;
