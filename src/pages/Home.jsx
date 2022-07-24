@@ -26,12 +26,13 @@ export default function Home() {
 
 const Container = styled.div`
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   position: relative;
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
   }
 
