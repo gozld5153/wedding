@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     console.log("실행");
     setScreenSize();
-  }, []);
+  });
 
   return (
     <Container>

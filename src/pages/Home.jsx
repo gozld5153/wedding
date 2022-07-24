@@ -20,10 +20,6 @@ export default function Home() {
           <div style={{ fontSize: "1.5rem" }}>Jang Sera</div>
         </Who>
       </TextBox>
-      {/* <Comments>
-        <Wedding style={{ marginLeft: `-30px` }}>wedding</Wedding>
-        <div>invitation</div>
-      </Comments> */}
     </Container>
   );
 }
@@ -47,7 +43,7 @@ const Container = styled.div`
     position: absolute;
     top: 30%;
     right: 5%;
-    font-size: 2rem;
+    font-size: 3rem;
     opacity: 0.5;
   }
 `;
@@ -63,7 +59,7 @@ const Date = styled.div`
   font-size: 6rem;
   font-weight: 600;
   color: #fff;
-  opacity: 0.8;
+  opacity: 0.7;
   font-family: "Cormorant SC", serif;
   position: relative;
 
@@ -83,22 +79,5 @@ const Who = styled.div`
   color: #fff;
   margin-bottom: 20px;
   font-family: "Bebas Neue", cursive;
-  opacity: 0.9;
-`;
-
-const Comments = styled.div`
-  position: absolute;
-  bottom: 5%;
-  right: 6%;
-  margin-left: 20px;
-  text-align: start;
-  font-size: 3rem;
-  color: #fff;
-  font-family: "Fira Sans", sans-serif;
-`;
-
-const Wedding = styled.div`
-  position: absolute;
-  top: -90%;
-  left: 0%;
+  opacity: 0.8;
 `;
