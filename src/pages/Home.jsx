@@ -35,7 +35,7 @@ const Container = styled.div`
 
   img {
     width: 100%;
-    height: calc(var(--vh, 1vh) * 100)
+    height: 100%;
     object-fit: cover;
   }
   > svg {
