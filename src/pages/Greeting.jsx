@@ -59,7 +59,7 @@ export default function Greeting() {
 
 const Container = styled.div`
   width: 100vw;
-  /* height: calc(var(--vh, 1vh) * 100); */
+  height: calc(var(--vh, 1vh) * 100);
   /* height: 100vh; */
   display: flex;
 `;
