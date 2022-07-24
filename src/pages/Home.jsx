@@ -59,7 +59,7 @@ const Date = styled.div`
   font-size: 6rem;
   font-weight: 600;
   color: #fff;
-  opacity: 0.7;
+  opacity: 0.5;
   font-family: "Cormorant SC", serif;
   position: relative;
 
@@ -79,5 +79,5 @@ const Who = styled.div`
   color: #fff;
   margin-bottom: 20px;
   font-family: "Bebas Neue", cursive;
-  opacity: 0.8;
+  opacity: 0.6;
 `;
