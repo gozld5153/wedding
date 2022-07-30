@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Greeting from "./pages/Greeting";
 import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
+import Calendar from "./pages/Calendar";
 
 function App() {
   SwiperCore.use([Navigation]);
@@ -49,6 +50,9 @@ function App() {
         </SwiperSlide>
         <SwiperSlide>
           <Greeting />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Calendar />
         </SwiperSlide>
         <Next ref={nextRef}>
           <MdArrowForwardIos />
