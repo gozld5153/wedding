@@ -49,7 +49,7 @@ const Container = styled.div`
 const ImgBox = styled.div`
   position: absolute;
   width: 100%;
-  height: 40vh;
+  height: calc(var(--vh, 1vh) * 40);
   margin: 40px auto;
   z-index: -1;
 
@@ -67,7 +67,7 @@ const Border = styled.div`
 `;
 
 const VoidBox = styled.div`
-  height: calc(40vh + 40px);
+  height: calc(var(--vh, 1vh) * 40 + 40px);
 `;
 
 const Invite = styled.div`
