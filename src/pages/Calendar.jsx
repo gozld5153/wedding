@@ -1,11 +1,7 @@
 import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
 import Map from "./Map";
-import { useState } from "react";
 
 export default function Calendar() {
-  const [loading, setLoading] = useState(false);
-
   return (
     <Container>
       <MiniCalendar>
@@ -73,7 +69,8 @@ export default function Calendar() {
           </tr>
         </tbody>
       </MiniCalendar>
-      <Map setLoading={setLoading} loading={loading} />
+
+      <Map />
     </Container>
   );
 }
