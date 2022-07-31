@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import Map from "./Map";
+import img from "../asset/jpgdownload.jpg";
+import { IoIosWalk, IoIosSubway, IoIosBus, IoIosCar } from "react-icons/io";
+import { MdOutlineLocalParking } from "react-icons/md";
+import { GiPhone } from "react-icons/gi";
 
 export default function Calendar() {
   return (
@@ -7,7 +11,7 @@ export default function Calendar() {
       <MiniCalendar>
         <thead>
           <tr>
-            <th colSpan={7}>10월</th>
+            <th colSpan={7}>10</th>
           </tr>
         </thead>
         <tbody>
@@ -70,13 +74,77 @@ export default function Calendar() {
         </tbody>
       </MiniCalendar>
 
-      <Map />
+      <Navigation>
+        <img src={img} alt="" />
+        <ImgBox style={{ display: "flex" }}>
+          <Background>
+            <IoIosWalk />
+          </Background>
+          <span>도 보</span>
+        </ImgBox>
+        <Contents>충무로역 1번 출구에서 약 5분 / 약 615m</Contents>
+
+        <ImgBox style={{ display: "flex" }}>
+          <Background>
+            <IoIosSubway />
+          </Background>
+          <span>지하철</span>
+        </ImgBox>
+        <Contents>
+          {" "}
+          지하철 3,4호선 충무로역 1번{" "}
+          <span>출구 앞 셔틀버스 이용 (3분 간격 운행)</span>
+          <p style={{ color: "#cd5c5c" }}>
+            셔틀버스는 예식 1시간 전부터 예식 시작 시간까지 운행됩니다.
+          </p>
+        </Contents>
+
+        <ImgBox style={{ display: "flex" }}>
+          <Background>
+            <IoIosBus />
+          </Background>
+          <span>버 스</span>
+        </ImgBox>
+        <Contents>
+          <span>104, 421, 463, 507 / 남산순환버스 2,5</span>
+        </Contents>
+
+        <ImgBox style={{ display: "flex" }}>
+          <Background>
+            <MdOutlineLocalParking />
+          </Background>
+          <span>주 차</span>
+        </ImgBox>
+        <Contents>
+          <span>라비두스 주차장</span>
+        </Contents>
+
+        <ImgBox style={{ display: "flex" }}>
+          <Background>
+            <IoIosCar />
+          </Background>
+          <span>주 소</span>
+        </ImgBox>
+        <Contents>
+          <span>서울특벽시 중구 필동로 5길 7(필동3가 62-11번지)</span>
+        </Contents>
+
+        <ImgBox style={{ display: "flex" }}>
+          <Background>
+            <GiPhone />
+          </Background>
+          <span>문 의</span>
+        </ImgBox>
+        <Contents>
+          <span> 02 - 2265 - 7000</span>
+        </Contents>
+      </Navigation>
     </Container>
   );
 }
 
 const Container = styled.div`
-  height: calc(var(--vh, 1vh) * 100);
+  /* height: calc(var(--vh, 1vh) * 100); */
 `;
 
 const MiniCalendar = styled.table`
@@ -84,7 +152,7 @@ const MiniCalendar = styled.table`
   border-collapse: collapse;
   width: 60%;
   height: 30%;
-  margin: 10px auto;
+  margin: 40px auto 10px auto;
 
   td {
     height: 30px;
@@ -106,4 +174,46 @@ const MiniCalendar = styled.table`
     }
     /* border: 1px solid black; */
   }
+`;
+
+const Navigation = styled.div`
+  width: 90%;
+  height: 40%;
+  margin: 0 auto;
+  font-family: "Do Hyeon", sans-serif;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+`;
+
+const Background = styled.div`
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* line-height: 25px; */
+  background-color: #ea8e99;
+  color: #fff;
+  svg {
+    font-size: 23px;
+  }
+`;
+
+const Contents = styled.div`
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+`;
+
+const ImgBox = styled.div`
+  display: flex;
+  gap: 10px;
 `;
