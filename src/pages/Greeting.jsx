@@ -1,7 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { BiCopy } from "react-icons/bi";
+import Modal from "../Modal";
 
 export default function Greeting() {
+  const [modalOnOff, setModalOnOff] = useState(false);
+  const handleCopy = (account) => {
+    if (navigator.clipboard) {
+      console.log("clipboard");
+      // (IE는 사용 못하고, 크롬은 66버전 이상일때 사용 가능합니다.)
+      navigator.clipboard
+        .writeText(account)
+        .then(() => {
+          setModalOnOff(true);
+          setTimeout(() => {
+            setModalOnOff(false);
+          }, 500);
+        })
+        .catch(() => {
+          alert("복사를 다시 시도해주세요.");
+        });
+    } else {
+      // 흐름 2.
+      if (!document.queryCommandSupported("copy")) {
+        return alert("복사하기가 지원되지 않는 브라우저입니다.");
+      }
+
+      // 흐름 3.
+      const textarea = document.createElement("textarea");
+      textarea.value = account;
+      textarea.style.top = 0;
+      textarea.style.left = 0;
+      textarea.style.position = "fixed";
+
+      // 흐름 4.
+      document.body.appendChild(textarea);
+      // focus() -> 사파리 브라우저 서포팅
+      textarea.focus();
+      // select() -> 사용자가 입력한 내용을 영역을 설정할 때 필요
+      textarea.select();
+      // 흐름 5.
+      document.execCommand("copy");
+      // 흐름 6.
+      document.body.removeChild(textarea);
+      setModalOnOff(true);
+      setTimeout(setModalOnOff(false), 500);
+    }
+  };
+
   return (
     <Container>
       <ImgBox>
@@ -28,9 +74,25 @@ export default function Greeting() {
 
       <AccountBox>
         <p>마음 보내실 곳</p>
-        <p>농협 601131-56-111803 예금주: 황민환</p>
-        <p>하나은행 37391122546807 예금주: 장세라</p>
+        <CopyBox>
+          <p>
+            농협 <span>601131-56-111803</span> 예금주: 황민환
+          </p>{" "}
+          <div onClick={() => handleCopy("601131-56-111803")}>
+            <BiCopy />
+          </div>
+        </CopyBox>
+
+        <CopyBox>
+          <p>
+            하나은행 <span>37391122546807</span> 예금주: 장세라
+          </p>{" "}
+          <div onClick={() => handleCopy("37391122546807")}>
+            <BiCopy />
+          </div>
+        </CopyBox>
       </AccountBox>
+      {modalOnOff && <Modal />}
     </Container>
   );
 }
@@ -93,4 +155,15 @@ const AccountBox = styled.div`
   opacity: 0.6;
   padding: 10px;
   background-color: #ffe4e1;
+`;
+
+const CopyBox = styled.div`
+  display: flex;
+
+  div {
+    display: flex;
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+  }
 `;
