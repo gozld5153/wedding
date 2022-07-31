@@ -1,10 +1,19 @@
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
+import Map from "./Map";
+import { useState } from "react";
 
 export default function Calendar() {
+  const [loading, setLoading] = useState(false);
+
   return (
     <Container>
       <MiniCalendar>
+        <thead>
+          <tr>
+            <th colSpan={7}>10월</th>
+          </tr>
+        </thead>
         <tbody>
           <tr>
             <td></td>
@@ -64,6 +73,7 @@ export default function Calendar() {
           </tr>
         </tbody>
       </MiniCalendar>
+      <Map setLoading={setLoading} loading={loading} />
     </Container>
   );
 }
@@ -76,19 +86,20 @@ const MiniCalendar = styled.table`
   /* border: 1px solid black; */
   border-collapse: collapse;
   width: 60%;
-  height: 40%;
+  height: 30%;
   margin: 10px auto;
 
-  th,
   td {
     height: 30px;
     width: 30px;
+    text-align: center;
     div {
       width: 30px;
       height: 30px;
       line-height: 30px;
       border: 2px solid red;
       border-radius: 100%;
+      margin: 0 auto;
     }
     :first-child {
       color: #cd5c5c;
@@ -96,7 +107,6 @@ const MiniCalendar = styled.table`
     :last-child {
       color: #cd5c5c;
     }
-    text-align: center;
     /* border: 1px solid black; */
   }
 `;
