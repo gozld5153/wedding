@@ -74,6 +74,8 @@ export default function Calendar() {
         </tbody>
       </MiniCalendar>
 
+      <WeddingTime>오후 6시 30분 예식</WeddingTime>
+
       <Navigation>
         <img src={img} alt="" />
         <ImgBox style={{ display: "flex" }}>
@@ -143,6 +145,12 @@ export default function Calendar() {
   );
 }
 
+const WeddingTime = styled.div`
+  text-align: center;
+  margin: 1.5rem 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+`;
 const Container = styled.div`
   /* height: calc(var(--vh, 1vh) * 100); */
 `;
