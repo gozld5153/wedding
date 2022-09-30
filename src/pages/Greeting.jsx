@@ -78,7 +78,7 @@ export default function Greeting() {
           <p>
             농협 <span>635-033-51-068-027</span> 예금주: 황운하
           </p>{" "}
-          <div onClick={() => handleCopy("601131-56-111803")}>
+          <div onClick={() => handleCopy("635-033-51-068-027")}>
             <BiCopy />
           </div>
         </CopyBox>
